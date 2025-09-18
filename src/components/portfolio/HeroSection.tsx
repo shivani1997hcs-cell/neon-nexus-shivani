@@ -1,7 +1,22 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 import TestimonialSlider from "./TestimonialSlider";
 
 const HeroSection = () => {
+  const [selectedTitle, setSelectedTitle] = useState("Product");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  
+  const titleOptions = [
+    "Product",
+    "Marketing", 
+    "GTM",
+    "Strategy",
+    "AI & Growth",
+    "Partnerships",
+    "Business Development"
+  ];
+
   const handleDownloadResume = () => {
     const link = document.createElement('a');
     link.href = '/assets/Shivani_Saluja_Resume.pdf';
@@ -41,9 +56,36 @@ const HeroSection = () => {
           Shivani Saluja
         </h1>
         
-        <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 font-light">
-          Manager of Product / Marketing / GTM / Strategy
-        </h2>
+        <div className="text-xl md:text-2xl text-muted-foreground mb-8 font-light flex items-center justify-center gap-2">
+          <span>Manager of</span>
+          <div className="relative">
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="flex items-center gap-1 px-3 py-1 rounded-lg border border-neon-cyan/30 bg-neon-cyan/10 text-neon-cyan hover:bg-neon-cyan/20 transition-colors"
+            >
+              {selectedTitle}
+              <ChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {isDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-48 bg-card/95 backdrop-blur-sm border border-neon-cyan/30 rounded-lg shadow-neon-cyan overflow-hidden z-50">
+                {titleOptions.map((title) => (
+                  <button
+                    key={title}
+                    onClick={() => {
+                      setSelectedTitle(title);
+                      setIsDropdownOpen(false);
+                    }}
+                    className={`w-full text-left px-4 py-2 hover:bg-neon-cyan/10 transition-colors ${
+                      selectedTitle === title ? 'bg-neon-cyan/20 text-neon-cyan' : 'text-foreground'
+                    }`}
+                  >
+                    {title}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
 
         {/* CTA buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">

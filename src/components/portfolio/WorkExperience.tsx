@@ -5,6 +5,7 @@ import { MapPin, Calendar } from "lucide-react";
 const experiences = [
   {
     company: "HeyAlpha",
+    companyUrl: "https://heyalpha.ai",
     role: "Strategy Intern",
     location: "London",
     period: "Jul–Sept 2025",
@@ -21,6 +22,7 @@ const experiences = [
   },
   {
     company: "GreyOrange",
+    companyUrl: "https://greyorange.com",
     role: "Product & Marketing Manager",
     location: "Gurgaon & Atlanta",
     period: "Aug 2022–Aug 2024",
@@ -38,6 +40,7 @@ const experiences = [
   },
   {
     company: "Graphy (Unacademy)",
+    companyUrl: "https://graphy.com",
     role: "Growth Manager",
     location: "Gurgaon",
     period: "Mar 2021–Jul 2022",
@@ -53,6 +56,7 @@ const experiences = [
   },
   {
     company: "Times Internet",
+    companyUrl: "https://timesinternet.in",
     role: "Brand Strategist",
     location: "Noida",
     period: "Feb 2019–Feb 2021",
@@ -98,7 +102,16 @@ const WorkExperience = () => {
                   <Card className="card-neon group hover:scale-[1.02] transition-all duration-300">
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                       <div>
-                        <h3 className="text-2xl font-bold mb-1">{exp.company}</h3>
+                        <h3 className="text-2xl font-bold mb-1">
+                          <a 
+                            href={exp.companyUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="hover:text-neon-cyan transition-colors"
+                          >
+                            {exp.company}
+                          </a>
+                        </h3>
                         <h4 className={`text-lg font-semibold ${exp.colorClasses.text} mb-2`}>
                           {exp.role}
                         </h4>

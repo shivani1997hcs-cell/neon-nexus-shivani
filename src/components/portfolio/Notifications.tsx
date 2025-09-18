@@ -3,14 +3,16 @@ import { Card } from "@/components/ui/card";
 import { X } from "lucide-react";
 
 const notifications = [
-  "Resume just downloaded",
-  "New case study viewed: GreyOrange",
-  "Shivani's profile shared on LinkedIn", 
-  "Call booked via Calendly",
-  "Technical Arsenal section visited",
-  "Work experience timeline explored",
-  "New visitor from London",
-  "Contact form interaction detected"
+  "HR Manager from a tech company just viewed Shivani's profile",
+  "Head of Product booked a call with Shivani",
+  "Recruiter downloaded Shivani's resume",
+  "Talent Partner reviewed Shivani's case study: GreyOrange",
+  "VP of Marketing connected with Shivani on LinkedIn",
+  "Chief Technology Officer viewed Shivani's Technical Arsenal",
+  "Product Manager explored Shivani's work experience",
+  "Head of Growth reviewed Shivani's case studies",
+  "Senior Director accessed Shivani's portfolio",
+  "Talent Acquisition Lead downloaded Shivani's resume"
 ];
 
 const Notifications = () => {
