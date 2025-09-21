@@ -126,15 +126,36 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* Card with neon glow */
+  /* Glassmorphism cards */
   .card-neon {
-    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300;
-    box-shadow: var(--shadow-card);
+    @apply rounded-[20px] border border-white/10 p-6;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
 
   .card-neon:hover {
-    @apply border-neon-cyan;
-    box-shadow: var(--shadow-card), var(--shadow-neon-cyan);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 255, 255, 0.2);
+  }
+
+  .card-neon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+  }
+
+  .card-neon:hover::before {
+    left: 100%;
   }
 
   /* Progress bars */
@@ -186,6 +207,41 @@
     50% { 
       box-shadow: 0 0 30px hsl(var(--neon-cyan) / 0.6);
     }
+  }
+
+  /* Animated floating background */
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(90deg); }
+    50% { transform: translateY(-40px) rotate(180deg); }
+    75% { transform: translateY(-20px) rotate(270deg); }
+  }
+
+  @keyframes float-medium {
+    0%, 100% { transform: translateX(0px) translateY(0px) rotate(0deg); }
+    25% { transform: translateX(15px) translateY(-30px) rotate(120deg); }
+    50% { transform: translateX(-15px) translateY(-50px) rotate(240deg); }
+    75% { transform: translateX(-30px) translateY(-20px) rotate(360deg); }
+  }
+
+  .floating-bg-1 {
+    animation: float-slow 25s ease-in-out infinite;
+    animation-delay: 0s;
+  }
+
+  .floating-bg-2 {
+    animation: float-medium 30s ease-in-out infinite;
+    animation-delay: 5s;
+  }
+
+  .floating-bg-3 {
+    animation: float-slow 35s ease-in-out infinite reverse;
+    animation-delay: 10s;
+  }
+
+  .floating-bg-4 {
+    animation: float-medium 28s ease-in-out infinite reverse;
+    animation-delay: 15s;
   }
 
   /* Notification slide-in */

@@ -6,6 +6,7 @@ import CaseStudies from "@/components/portfolio/CaseStudies";
 import Education from "@/components/portfolio/Education";
 import Contact from "@/components/portfolio/Contact";
 import Notifications from "@/components/portfolio/Notifications";
+import FloatingBackground from "@/components/portfolio/FloatingBackground";
 
 const Portfolio = () => {
   const [showNotifications, setShowNotifications] = useState(false);
@@ -20,13 +21,16 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <HeroSection />
-      <TechnicalArsenal />
-      <WorkExperience />
-      <CaseStudies />
-      <Education />
-      <Contact />
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
+      <FloatingBackground />
+      <div className="relative z-10">
+        <HeroSection />
+        <TechnicalArsenal />
+        <WorkExperience />
+        <CaseStudies />
+        <Education />
+        <Contact />
+      </div>
       {showNotifications && <Notifications />}
     </div>
   );

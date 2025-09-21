@@ -12,7 +12,7 @@ const Contact = () => {
   };
 
   const handleCalendlyClick = () => {
-    window.open('https://calendly.com/shivani-saluja', '_blank');
+    window.open('https://calendly.com/shivani1997hcs/30min', '_blank');
   };
 
   return (
