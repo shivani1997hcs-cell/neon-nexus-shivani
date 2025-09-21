@@ -76,12 +76,11 @@ const TechnicalArsenal = () => {
     <section id="skills" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient-secondary">
-            Technical Arsenal
+          <h2 className="text-5xl font-bold mb-4 text-gradient-secondary">
+            My Superpowers
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A comprehensive toolkit spanning AI, strategy, analytics, and leadership 
-            to drive transformational growth and innovation.
+          <p className="text-muted-foreground text-xl max-w-4xl mx-auto">
+            These aren't just buzzwords on my resume—they're tools I wield daily to create products that actually matter.
           </p>
         </div>
 

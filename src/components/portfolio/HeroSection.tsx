@@ -1,11 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import TestimonialSlider from "./TestimonialSlider";
+import TypingAnimation from "./TypingAnimation";
 
 const HeroSection = () => {
   const [selectedTitle, setSelectedTitle] = useState("Product");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ 
+        x: (e.clientX - window.innerWidth / 2) * 0.01,
+        y: (e.clientY - window.innerHeight / 2) * 0.01
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
   
   const titleOptions = [
     "Product",
@@ -44,47 +58,32 @@ const HeroSection = () => {
         <div className="absolute bottom-20 right-20 w-1.5 h-1.5 bg-neon-blue rounded-full animate-float opacity-50" style={{ animationDelay: '0.5s' }}></div>
       </div>
 
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
+      <div 
+        className="relative z-10 text-center max-w-4xl mx-auto"
+        style={{ 
+          transform: `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0)` 
+        }}
+      >
         {/* Available for Hire badge */}
         <div className="inline-flex items-center px-4 py-2 rounded-full border border-neon-cyan bg-neon-cyan/10 mb-8 glow-cyan">
           <div className="w-2 h-2 bg-neon-cyan rounded-full mr-2 animate-pulse"></div>
           <span className="text-neon-cyan font-medium text-sm">Available for Hire</span>
         </div>
 
-        {/* Name and title */}
-        <h1 className="text-6xl md:text-8xl font-bold mb-4 text-gradient-primary">
+        {/* Name and title with animated gradient */}
+        <h1 className="font-bold mb-8 text-gradient-animated animate-glow" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)' }}>
           Shivani Saluja
         </h1>
         
-        <div className="text-xl md:text-2xl text-muted-foreground mb-8 font-light flex items-center justify-center gap-2">
-          <span>Manager of</span>
-          <div className="relative">
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center gap-1 px-3 py-1 rounded-lg border border-neon-cyan/30 bg-neon-cyan/10 text-neon-cyan hover:bg-neon-cyan/20 transition-colors"
-            >
-              {selectedTitle}
-              <ChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {isDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 w-48 bg-card/95 backdrop-blur-sm border border-neon-cyan/30 rounded-lg shadow-neon-cyan overflow-hidden z-50">
-                {titleOptions.map((title) => (
-                  <button
-                    key={title}
-                    onClick={() => {
-                      setSelectedTitle(title);
-                      setIsDropdownOpen(false);
-                    }}
-                    className={`w-full text-left px-4 py-2 hover:bg-neon-cyan/10 transition-colors ${
-                      selectedTitle === title ? 'bg-neon-cyan/20 text-neon-cyan' : 'text-foreground'
-                    }`}
-                  >
-                    {title}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+        {/* Typing animation subtitle */}
+        <div className="mb-12 text-center max-w-3xl mx-auto">
+          <TypingAnimation
+            text="Product Manager who turns complex problems into elegant solutions 🚀
+I don't just manage products—I craft experiences that users actually love."
+            speed={50}
+            delay={1000}
+            className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed block"
+          />
         </div>
 
         {/* CTA buttons */}
@@ -93,17 +92,17 @@ const HeroSection = () => {
             onClick={handleDownloadResume}
             variant="neon"
             size="lg"
-            className="px-8 py-3 text-lg font-semibold"
+            className="px-8 py-3 text-lg font-semibold hover:scale-105 hover:shadow-neon-cyan hover:-translate-y-1 transition-all duration-300"
           >
-            Download Resume
+            See My Work
           </Button>
           <Button 
-            variant="neon-magenta"
+            variant="outline"
             onClick={handleContactMe}
             size="lg"
-            className="px-8 py-3 text-lg font-semibold"
+            className="px-8 py-3 text-lg font-semibold border-neon-magenta text-neon-magenta hover:bg-neon-magenta hover:text-background hover:scale-105 hover:-translate-y-1 transition-all duration-300"
           >
-            Contact Me
+            Let's Chat
           </Button>
         </div>
 
