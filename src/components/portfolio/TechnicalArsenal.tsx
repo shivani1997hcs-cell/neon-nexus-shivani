@@ -6,7 +6,7 @@ const skills = [
   {
     title: "AI & Automation",
     icon: Brain,
-    tools: "Google AI Studio, Lovable, Gamma, Manus, Genspark, Warehouse Robotics Software",
+    tools: "Google AI Studio, Lovable, Gamma, Manus, Genspark, Warehouse Robotics Software, n8n, Zapier (workflow automation agents)",
     proficiency: 90,
     colorClasses: {
       text: "text-neon-cyan",
@@ -80,7 +80,7 @@ const TechnicalArsenal = () => {
             My Superpowers
           </h2>
           <p className="text-muted-foreground text-xl max-w-4xl mx-auto">
-            These aren't just buzzwords on my resume—they're tools I wield daily to create products that actually matter.
+            These aren't just buzzwords on my resume. They're tools I wield daily to create products that actually matter.
           </p>
         </div>
 

@@ -8,7 +8,7 @@ const Contact = () => {
   };
 
   const handleLinkedInClick = () => {
-    window.open('https://www.linkedin.com/in/shivani-saluja/', '_blank');
+    window.open('https://www.linkedin.com/in/shivani-saluja-/', '_blank');
   };
 
   const handleCalendlyClick = () => {
@@ -93,31 +93,13 @@ const Contact = () => {
           <div className="space-y-6 text-muted-foreground">
             <p className="text-lg">
               I believe the best partnerships start with genuine conversations. Whether you're a founder with a wild idea, 
-              a fellow PM looking to collaborate, or someone who just wants to geek out about user psychology—let's connect!
-            </p>
-            
-            <p className="text-lg">
-              Perfect over a flat white at <span className="text-neon-cyan">Monmouth Coffee (Borough Market)</span> or 
-              <span className="text-neon-cyan"> Workshop Coffee (Fitzrovia)</span> — because the best ideas often come with the best coffee! ☕
-            </p>
-            
-            <p className="text-lg">
-              Whether it's a proper espresso at <span className="text-neon-magenta">Prufrock Coffee (Leather Lane)</span>, 
-              a cortado at <span className="text-neon-magenta">Ozone Coffee (Shoreditch)</span>, or the legendary flat white at 
-              <span className="text-neon-magenta"> Kaffeine (Fitzrovia)</span> — the best product conversations happen over great coffee.
+              a fellow PM looking to collaborate, or someone who just wants to geek out about user psychology. Let's connect!
             </p>
             
             <p className="text-lg">
               I'm always up for exploring London's coffee scene while diving deep into product strategy, user psychology, 
               or the latest in AI automation. Because sometimes the best insights come when you step away from the screen! ☕
             </p>
-            
-            <div className="bg-neon-cyan/10 border border-neon-cyan/20 rounded-lg p-4 mt-6">
-              <p className="text-neon-cyan font-semibold">
-                <strong>Pro Tip:</strong> Mention your favorite product failure in your message. I love hearing about experiments 
-                that didn't work—they're often more interesting than the successes! 🚀
-              </p>
-            </div>
           </div>
         </Card>
       </div>

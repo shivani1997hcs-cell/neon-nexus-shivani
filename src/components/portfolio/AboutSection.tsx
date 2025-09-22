@@ -41,15 +41,23 @@ const AboutSection = () => {
             
             <div className="space-y-6 text-lg leading-relaxed">
               <p className="text-muted-foreground">
-                I'm that product manager who actually understands both the tech AND the humans using it. 
-                With a background that spans from crunching numbers at startups to strategizing at big tech, 
-                I've learned that the best products aren't just functional—they're magical.
+                Recent Imperial MBA grad in that classic 'I have business knowledge and ambition, now what?' phase. 
+                It's actually liberating-no predetermined path, just curiosity about where problems need solving.
               </p>
               
               <p className="text-muted-foreground">
-                When I'm not obsessing over user journeys or diving deep into analytics, you'll find me 
-                exploring new technologies or mentoring the next generation of product folks. Because great 
-                products aren't built by lone wolves—they're built by passionate teams.
+                Pre-MBA, I made warehouse automation less painful for humans. It taught me that fixing friction 
+                points matters whether you're designing robot workflows or user experiences.
+              </p>
+              
+              <p className="text-muted-foreground">
+                These days I'm exploring everything-fintech, consumer products, you name it. Not collecting 
+                experiences, but finding where my systematic problem-solving can actually make a difference.
+              </p>
+              
+              <p className="text-muted-foreground">
+                Also, I make a solid flat white and have strong opinions about London's startup coffee scene. 
+                Important life skills, obviously.
               </p>
             </div>
           </div>
