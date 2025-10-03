@@ -78,7 +78,7 @@ const HeroSection = () => {
         {/* Typing animation subtitle */}
         <div className="mb-12 text-center max-w-3xl mx-auto">
           <TypingAnimation
-            text="I'm the PM who actually reads user feedback (and does something about it) — Turning product chaos into user love stories, one feature at a time!"
+            text="Product marketer who actually gets what customers want to hear (not what engineering wants to say)"
             speed={50}
             delay={1000}
             className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed block"
