@@ -4,10 +4,10 @@ import { Brain, Target, BarChart3, TrendingUp, Users, Handshake } from "lucide-r
 
 const skills = [
   {
-    title: "AI & Automation",
-    icon: Brain,
-    tools: "Google AI Studio, Lovable, Gamma, Manus, Genspark, Warehouse Robotics Software, n8n, Zapier (workflow automation agents)",
-    proficiency: 90,
+    title: "Product & Strategy",
+    icon: Target,
+    tools: "Positioning & Messaging, Go-to-Market Strategy, Competitive Analysis, Product Launches, Market Research",
+    proficiency: 95,
     colorClasses: {
       text: "text-neon-cyan",
       bg: "bg-neon-cyan/10",
@@ -15,10 +15,10 @@ const skills = [
     }
   },
   {
-    title: "Product & Strategy", 
-    icon: Target,
-    tools: "0-to-1 Development, Roadmapping, Competitive Analysis, GTM Strategy, A/B Testing",
-    proficiency: 95,
+    title: "Growth & Content", 
+    icon: TrendingUp,
+    tools: "Content Strategy, Sales Enablement, Customer Insights, Conversion Optimization, Campaign Planning",
+    proficiency: 92,
     colorClasses: {
       text: "text-neon-magenta",
       bg: "bg-neon-magenta/10",
@@ -26,10 +26,10 @@ const skills = [
     }
   },
   {
-    title: "Data & Analytics",
-    icon: BarChart3,
-    tools: "SQL, Tableau, Google Analytics, Salesforce, Microsoft Suite",
-    proficiency: 85,
+    title: "Leadership & Execution",
+    icon: Users,
+    tools: "Stakeholder Management, Cross-Functional Leadership, GTM Execution, External Relations, Negotiation",
+    proficiency: 90,
     colorClasses: {
       text: "text-neon-purple",
       bg: "bg-neon-purple/10",
@@ -37,10 +37,10 @@ const skills = [
     }
   },
   {
-    title: "Growth & Demand Generation",
-    icon: TrendingUp,
-    tools: "Digital Marketing, Content Strategy, Pipeline Generation",
-    proficiency: 90,
+    title: "Data & Analytics",
+    icon: BarChart3,
+    tools: "A/B Testing, Performance Metrics, Market Sizing, Customer Analytics, ROI Tracking",
+    proficiency: 88,
     colorClasses: {
       text: "text-neon-blue",
       bg: "bg-neon-blue/10",
@@ -48,10 +48,10 @@ const skills = [
     }
   },
   {
-    title: "Leadership & Strategy",
-    icon: Users,
-    tools: "Team mentorship, Stakeholder management, Cross-functional collaboration",
-    proficiency: 92,
+    title: "Business Development & Partnerships",
+    icon: Handshake,
+    tools: "Partnership Strategy, Due Diligence, Deal Negotiation, Relationship Building, Revenue Growth",
+    proficiency: 90,
     colorClasses: {
       text: "text-neon-cyan",
       bg: "bg-neon-cyan/10",
@@ -59,10 +59,10 @@ const skills = [
     }
   },
   {
-    title: "Business Development & Partnerships",
-    icon: Handshake,
-    tools: "Enterprise Sales, Partnership Strategy, Sponsorships",
-    proficiency: 88,
+    title: "Technical Fluency",
+    icon: Brain,
+    tools: "AI/ML Platforms, No-Code Tools, Conversational AI, Product Documentation, Technical Translation",
+    proficiency: 85,
     colorClasses: {
       text: "text-neon-magenta",
       bg: "bg-neon-magenta/10",
@@ -80,7 +80,7 @@ const TechnicalArsenal = () => {
             My Superpowers
           </h2>
           <p className="text-muted-foreground text-xl max-w-4xl mx-auto">
-            These aren't just buzzwords on my resume. They're tools I wield daily to create products that actually matter.
+            The stuff I'm actually good at (with proof)
           </p>
         </div>
 

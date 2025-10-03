@@ -93,7 +93,7 @@ const HeroSection = () => {
             size="lg"
             className="px-8 py-3 text-lg font-semibold hover:scale-105 hover:shadow-neon-cyan hover:-translate-y-1 transition-all duration-300"
           >
-            See My Work
+            Download My Resume
           </Button>
           <Button 
             variant="outline"

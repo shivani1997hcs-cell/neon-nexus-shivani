@@ -86,22 +86,39 @@ const Contact = () => {
           </div>
         </Card>
 
-        {/* Coffee Culture Section */}
-        <Card className="card-neon mt-8 text-center">
-          <h3 className="text-2xl font-bold mb-4 text-neon-cyan">Coffee Chat? Virtual High-Five? 🙌</h3>
+        {/* Why This Exists Section */}
+        <Card className="card-neon mt-8">
+          <h3 className="text-3xl font-bold mb-6 text-gradient-secondary text-center">
+            Why This Website Exists
+          </h3>
           
-          <div className="space-y-6 text-muted-foreground">
-            <p className="text-lg">
-              I believe the best partnerships start with genuine conversations. Whether you're a founder with a wild idea, 
-              a fellow PM looking to collaborate, or someone who just wants to geek out about user psychology. Let's connect!
+          <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
+            <p>
+              Because saying "I simplify complex messaging" is useless without showing it. So I built this portfolio site for £2.50 (domain only) using no-code tools. Created AI agents. Made it actually readable. If I can't market myself clearly, why would you trust me to market your product?
             </p>
             
-            <p className="text-lg">
-              I'm always up for exploring London's coffee scene while diving deep into product strategy, user psychology, 
-              or the latest in AI automation. Because sometimes the best insights come when you step away from the screen! ☕
+            <p>
+              Also, I'm currently doing my MBA at Imperial College London and interning with a conversational AI platform. Which means I'm watching AI hype crash into reality daily. Spoiler: most AI marketing is terrible. I'm trying to fix that.
             </p>
+
+            <div className="pt-8 text-center">
+              <h4 className="text-2xl font-bold mb-4 text-neon-cyan">Let's Build Something</h4>
+              <p className="text-muted-foreground">
+                Whether you're a founder with a wild idea, a fellow PMM/PM looking to collaborate, or someone who just wants to geek out about user psychology. Let's connect!
+              </p>
+            </div>
           </div>
         </Card>
+
+        {/* Footer */}
+        <div className="mt-12 text-center space-y-4">
+          <p className="text-sm text-muted-foreground">
+            Built by Shivani. Hosted for less than a coffee. ☕
+          </p>
+          <p className="text-sm text-muted-foreground italic">
+            No AI was used to write this. Just kidding. Some AI was definitely used. But I edited it until it sounded like me.
+          </p>
+        </div>
       </div>
     </section>
   );

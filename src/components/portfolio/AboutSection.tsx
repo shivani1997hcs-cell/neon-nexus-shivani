@@ -29,39 +29,65 @@ const AboutSection = () => {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
-      <div className="max-w-4xl mx-auto">
-        <Card className="card-neon group hover:scale-[1.02] hover:shadow-neon-cyan transition-all duration-300 text-center relative overflow-hidden">
-          {/* Shimmer effect */}
-          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-          
-          <div className="relative z-10">
-            <h2 className="text-3xl font-bold mb-8 text-neon-cyan">
-              Hey there! 👋
-            </h2>
-            
-            <div className="space-y-6 text-lg leading-relaxed">
-              <p className="text-muted-foreground">
-                Recent Imperial MBA grad in that classic 'I have business knowledge and ambition, now what?' phase. 
-                It's actually liberating-no predetermined path, just curiosity about where problems need solving.
-              </p>
-              
-              <p className="text-muted-foreground">
-                Pre-MBA, I made warehouse automation less painful for humans. It taught me that fixing friction 
-                points matters whether you're designing robot workflows or user experiences.
-              </p>
-              
-              <p className="text-muted-foreground">
-                These days I'm exploring everything-fintech, consumer products, you name it. Not collecting 
-                experiences, but finding where my systematic problem-solving can actually make a difference.
-              </p>
-              
-              <p className="text-muted-foreground">
-                Also, I make a solid flat white and have strong opinions about London's startup coffee scene. 
-                Important life skills, obviously.
-              </p>
-            </div>
-          </div>
-        </Card>
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold mb-4 text-gradient-secondary">
+            The Problem with Most Marketing
+          </h2>
+          <p className="text-muted-foreground text-xl max-w-4xl mx-auto">
+            It's either too boring or too buzzword-y. I fix that.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Card 1 */}
+          <Card className="card-neon group hover:scale-105 transition-all duration-300">
+            <h3 className="text-2xl font-bold mb-4 text-neon-cyan">Positioning That Sticks</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              I don't just say you're "innovative" or "best-in-class." I find what actually makes you different and say it in a way people remember at 3am.
+            </p>
+          </Card>
+
+          {/* Card 2 */}
+          <Card className="card-neon group hover:scale-105 transition-all duration-300">
+            <h3 className="text-2xl font-bold mb-4 text-neon-magenta">Messaging Surgery</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Take a 47-slide deck full of jargon. Give me 30 minutes. You'll get one sentence your grandma could understand (and remember).
+            </p>
+          </Card>
+
+          {/* Card 3 */}
+          <Card className="card-neon group hover:scale-105 transition-all duration-300">
+            <h3 className="text-2xl font-bold mb-4 text-neon-purple">GTM That Actually Goes</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Built launches that got sales excited (hard), customers interested (harder), and press coverage (surprisingly doable when you're not boring).
+            </p>
+          </Card>
+
+          {/* Card 4 */}
+          <Card className="card-neon group hover:scale-105 transition-all duration-300">
+            <h3 className="text-2xl font-bold mb-4 text-neon-blue">Stakeholder Whisperer</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Led external relations for a tech club. Won a VC challenge. Learned that getting buy-in is 20% logic, 80% knowing what keeps people up at night.
+            </p>
+          </Card>
+
+          {/* Card 5 */}
+          <Card className="card-neon group hover:scale-105 transition-all duration-300">
+            <h3 className="text-2xl font-bold mb-4 text-neon-cyan">Data + Storytelling</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Currently interning with a conversational AI platform. Turns out, even the coolest tech needs someone to explain why anyone should care.
+            </p>
+          </Card>
+
+          {/* Card 6 */}
+          <Card className="card-neon group hover:scale-105 transition-all duration-300">
+            <h3 className="text-2xl font-bold mb-4 text-neon-magenta">Built This for £2.50</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Because if I'm going to talk about efficiency and scrappiness, I should probably practice it. Domain cost only. No fancy agency. Just me, no-code tools, and caffeine.
+            </p>
+          </Card>
+        </div>
       </div>
     </section>
   );
