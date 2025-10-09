@@ -24,7 +24,7 @@ const experiences = [
     company: "GreyOrange",
     companyUrl: "https://greyorange.com",
     role: "Product & Marketing Manager",
-    location: "Atlanta",
+    location: "Atlanta (Hybrid)",
     period: "Aug 2022–Aug 2024",
     description: "Global provider of warehouse robotics and AI-powered automation",
     achievements: [
@@ -42,7 +42,7 @@ const experiences = [
     company: "Graphy (Unacademy)",
     companyUrl: "https://graphy.com",
     role: "Product Marketing Manager",
-    location: "San Francisco",
+    location: "San Francisco (Remote)",
     period: "Mar 2021–Jul 2022",
     description: "LMS enabling creators to deliver courses & scale monetization",
     achievements: [
@@ -58,7 +58,7 @@ const experiences = [
     company: "Times Internet",
     companyUrl: "https://timesinternet.in",
     role: "Associate Product Marketing Manager",
-    location: "Noida",
+    location: "Noida (On-site)",
     period: "Feb 2019–Feb 2021",
     description: "India's largest digital media & technology platform",
     achievements: [
