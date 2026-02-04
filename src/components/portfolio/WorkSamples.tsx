@@ -36,6 +36,22 @@ const workSamples = [
     }
   },
   {
+    title: "Customer Voice Program and Social Proof",
+    type: "Customer videos and posts",
+    description: "Customer voice program to turn logos into advocates. Featured customers in retail, pharmacy, and e commerce fulfillment in LinkedIn posts and web content to provide authentic social proof.",
+    links: [
+      { label: "Evergreen (retail)", url: "https://www.linkedin.com/posts/gogreyorange_roboticautomation-peakseason-warehouse-ugcPost-7207013832710336513-EeBV/" },
+      { label: "Apotek (pharmacy)", url: "https://www.linkedin.com/posts/gogreyorange_roboticautomation-warehouse-warehouseautomation-activity-7242521568986173441-IpyY/" },
+      { label: "Active Ants (fulfillment)", url: "https://www.linkedin.com/posts/gogreyorange_warehouse-roboticautomation-warehouseautomation-activity-7227305099490930690-SoXG/" }
+    ],
+    colorClasses: {
+      text: "text-neon-purple",
+      bg: "bg-neon-purple/10",
+      border: "border-neon-purple/20",
+      badge: "border-neon-purple text-neon-purple"
+    }
+  },
+  {
     title: "Customer Case: Dafiti",
     type: "Regional demand generation",
     description: "Customer story and social content for one of Latin America's largest e commerce players, used in regional demand generation.",
@@ -43,10 +59,10 @@ const workSamples = [
       { label: "View on LinkedIn", url: "https://www.linkedin.com/posts/gogreyorange_dafiti-cuts-costs-and-serves-customers-faster-activity-7096822838694727680-IafY" }
     ],
     colorClasses: {
-      text: "text-neon-purple",
-      bg: "bg-neon-purple/10",
-      border: "border-neon-purple/20",
-      badge: "border-neon-purple text-neon-purple"
+      text: "text-neon-blue",
+      bg: "bg-neon-blue/10",
+      border: "border-neon-blue/20",
+      badge: "border-neon-blue text-neon-blue"
     }
   },
   {
@@ -57,10 +73,10 @@ const workSamples = [
       { label: "Watch event", url: "https://economictimes.indiatimes.com/spotlight/etpwla2024_watchlive.cms" }
     ],
     colorClasses: {
-      text: "text-neon-blue",
-      bg: "bg-neon-blue/10",
-      border: "border-neon-blue/20",
-      badge: "border-neon-blue text-neon-blue"
+      text: "text-neon-green",
+      bg: "bg-neon-green/10",
+      border: "border-neon-green/20",
+      badge: "border-neon-green text-neon-green"
     }
   }
 ];
