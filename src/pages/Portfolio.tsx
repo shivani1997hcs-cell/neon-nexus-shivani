@@ -4,6 +4,8 @@ import AboutSection from "@/components/portfolio/AboutSection";
 import TechnicalArsenal from "@/components/portfolio/TechnicalArsenal";
 import WorkExperience from "@/components/portfolio/WorkExperience";
 import CaseStudies from "@/components/portfolio/CaseStudies";
+import WorkSamples from "@/components/portfolio/WorkSamples";
+import HowIWork from "@/components/portfolio/HowIWork";
 import Education from "@/components/portfolio/Education";
 import Contact from "@/components/portfolio/Contact";
 import Notifications from "@/components/portfolio/Notifications";
@@ -30,6 +32,8 @@ const Portfolio = () => {
         <TechnicalArsenal />
         <WorkExperience />
         <CaseStudies />
+        <WorkSamples />
+        <HowIWork />
         <Education />
         <Contact />
       </div>
