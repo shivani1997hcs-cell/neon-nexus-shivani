@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { useEffect, useRef, useState } from "react";
+import { Target, MessageSquare, FileText } from "lucide-react";
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,6 +23,39 @@ const AboutSection = () => {
     return () => observer.disconnect();
   }, []);
 
+  const cards = [
+    {
+      icon: Target,
+      title: "GTM Strategy",
+      description: "I design and execute go to market strategies for new products and features. I have launched campaigns in warehouse robotics, SaaS, and media, always starting from customer and win/loss insight.",
+      colorClasses: {
+        text: "text-neon-cyan",
+        bg: "bg-neon-cyan/10",
+        border: "border-neon-cyan/20"
+      }
+    },
+    {
+      icon: MessageSquare,
+      title: "Positioning and Messaging",
+      description: "I turn complex, technical products into positioning and messaging that sales and customers can understand. This includes ICP definition, narrative, value propositions, and messaging frameworks.",
+      colorClasses: {
+        text: "text-neon-magenta",
+        bg: "bg-neon-magenta/10",
+        border: "border-neon-magenta/20"
+      }
+    },
+    {
+      icon: FileText,
+      title: "Sales Enablement and Customer Proof",
+      description: "I build the assets that support revenue: decks, email plays, battlecards, ROI narratives, and customer proof programs with case studies and video testimonials.",
+      colorClasses: {
+        text: "text-neon-purple",
+        bg: "bg-neon-purple/10",
+        border: "border-neon-purple/20"
+      }
+    }
+  ];
+
   return (
     <section 
       ref={sectionRef}
@@ -32,61 +66,27 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-4 text-gradient-secondary">
-            The Problem with Most Marketing
+            What I Do
           </h2>
-          <p className="text-muted-foreground text-xl max-w-4xl mx-auto">
-            It's either too boring or too buzzword-y. I fix that.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Card 1 */}
-          <Card className="card-neon group hover:scale-105 transition-all duration-300">
-            <h3 className="text-2xl font-bold mb-4 text-neon-cyan">Positioning That Sticks</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              I don't just say you're "innovative" or "best-in-class." I find what actually makes you different and say it in a way people remember at 3am.
-            </p>
-          </Card>
-
-          {/* Card 2 */}
-          <Card className="card-neon group hover:scale-105 transition-all duration-300">
-            <h3 className="text-2xl font-bold mb-4 text-neon-magenta">Messaging Surgery</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Take a 47-slide deck full of jargon. Give me 30 minutes. You'll get one sentence your grandma could understand (and remember).
-            </p>
-          </Card>
-
-          {/* Card 3 */}
-          <Card className="card-neon group hover:scale-105 transition-all duration-300">
-            <h3 className="text-2xl font-bold mb-4 text-neon-purple">GTM That Actually Goes</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Built launches that got sales excited (hard), customers interested (harder), and press coverage (surprisingly doable when you're not boring).
-            </p>
-          </Card>
-
-          {/* Card 4 */}
-          <Card className="card-neon group hover:scale-105 transition-all duration-300">
-            <h3 className="text-2xl font-bold mb-4 text-neon-blue">Stakeholder Whisperer</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Led external relations for a tech club. Won a VC challenge. Learned that getting buy-in is 20% logic, 80% knowing what keeps people up at night.
-            </p>
-          </Card>
-
-          {/* Card 5 */}
-          <Card className="card-neon group hover:scale-105 transition-all duration-300">
-            <h3 className="text-2xl font-bold mb-4 text-neon-cyan">Data + Storytelling</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Currently interning with a conversational AI platform. Turns out, even the coolest tech needs someone to explain why anyone should care.
-            </p>
-          </Card>
-
-          {/* Card 6 */}
-          <Card className="card-neon group hover:scale-105 transition-all duration-300">
-            <h3 className="text-2xl font-bold mb-4 text-neon-magenta">Built This for £2.50</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Because if I'm going to talk about efficiency and scrappiness, I should probably practice it. Domain cost only. No fancy agency. Just me, no-code tools, and caffeine.
-            </p>
-          </Card>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {cards.map((card, index) => {
+            const IconComponent = card.icon;
+            return (
+              <Card key={index} className="card-neon group hover:scale-105 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className={`p-3 rounded-lg ${card.colorClasses.bg} border ${card.colorClasses.border} mr-4`}>
+                    <IconComponent className={`w-6 h-6 ${card.colorClasses.text}`} />
+                  </div>
+                </div>
+                <h3 className={`text-2xl font-bold mb-4 ${card.colorClasses.text}`}>{card.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {card.description}
+                </p>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

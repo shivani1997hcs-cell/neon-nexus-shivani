@@ -1,12 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
-import TestimonialSlider from "./TestimonialSlider";
-import TypingAnimation from "./TypingAnimation";
 
 const HeroSection = () => {
-  const [selectedTitle, setSelectedTitle] = useState("Product");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -20,16 +15,6 @@ const HeroSection = () => {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
-  
-  const titleOptions = [
-    "Product",
-    "Marketing", 
-    "GTM",
-    "Strategy",
-    "AI & Growth",
-    "Partnerships",
-    "Business Development"
-  ];
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
@@ -70,30 +55,35 @@ const HeroSection = () => {
           <span className="text-neon-cyan font-medium text-sm">Available for Hire</span>
         </div>
 
-        {/* Name and title with animated gradient */}
-        <h1 className="font-bold mb-8 text-gradient-animated animate-glow" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)' }}>
+        {/* Name */}
+        <h1 className="font-bold mb-4 text-gradient-animated animate-glow" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)' }}>
           Shivani Saluja
         </h1>
         
-        {/* Typing animation subtitle */}
-        <div className="mb-12 text-center max-w-3xl mx-auto">
-          <TypingAnimation
-            text="Product marketer who actually gets what customers want to hear (not what engineering wants to say)"
-            speed={50}
-            delay={1000}
-            className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed block"
-          />
-        </div>
+        {/* Title */}
+        <h2 className="text-2xl md:text-3xl font-semibold text-neon-cyan mb-6">
+          B2B Product Marketer
+        </h2>
+
+        {/* Subheading */}
+        <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed mb-6 max-w-3xl mx-auto">
+          I help technical teams turn complex products into clear narratives, campaigns, and sales motions that drive revenue.
+        </p>
+
+        {/* Credibility line */}
+        <p className="text-base md:text-lg text-muted-foreground/80 mb-12 max-w-2xl mx-auto">
+          Experience across warehouse automation, B2B SaaS, and media, working with enterprise buyers in the US, Europe, and APAC.
+        </p>
 
         {/* CTA buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
             onClick={handleDownloadResume}
             variant="neon"
             size="lg"
             className="px-8 py-3 text-lg font-semibold hover:scale-105 hover:shadow-neon-cyan hover:-translate-y-1 transition-all duration-300"
           >
-            Download My Resume
+            Download Resume
           </Button>
           <Button 
             variant="outline"
@@ -104,9 +94,6 @@ const HeroSection = () => {
             Let's Chat
           </Button>
         </div>
-
-        {/* Testimonial slider */}
-        <TestimonialSlider />
       </div>
     </section>
   );
