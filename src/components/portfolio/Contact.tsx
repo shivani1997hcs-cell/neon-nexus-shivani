@@ -84,16 +84,6 @@ const Contact = () => {
             </p>
           </div>
         </Card>
-
-        {/* Footer */}
-        <div className="mt-12 text-center space-y-2">
-          <p className="text-sm text-muted-foreground">
-            Built with Lovable. Domain: £2.50.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            shivani.saluja24@imperial.ac.uk • <a href="https://www.linkedin.com/in/shivani-saluja-/" target="_blank" rel="noopener noreferrer" className="text-neon-cyan hover:underline">LinkedIn</a>
-          </p>
-        </div>
       </div>
     </section>
   );

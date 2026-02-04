@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import HeroSection from "@/components/portfolio/HeroSection";
+import Testimonials from "@/components/portfolio/Testimonials";
 import AboutSection from "@/components/portfolio/AboutSection";
 import TechnicalArsenal from "@/components/portfolio/TechnicalArsenal";
 import WorkExperience from "@/components/portfolio/WorkExperience";
@@ -28,6 +29,7 @@ const Portfolio = () => {
       <FloatingBackground />
       <div className="relative z-10">
         <HeroSection />
+        <Testimonials />
         <AboutSection />
         <TechnicalArsenal />
         <WorkExperience />
