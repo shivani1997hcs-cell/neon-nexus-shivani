@@ -1,45 +1,29 @@
-import { useState, useEffect } from "react";
+import Navbar from "@/components/portfolio/Navbar";
 import HeroSection from "@/components/portfolio/HeroSection";
-import Testimonials from "@/components/portfolio/Testimonials";
 import AboutSection from "@/components/portfolio/AboutSection";
-import TechnicalArsenal from "@/components/portfolio/TechnicalArsenal";
-import WorkExperience from "@/components/portfolio/WorkExperience";
-import CaseStudies from "@/components/portfolio/CaseStudies";
-import WorkSamples from "@/components/portfolio/WorkSamples";
-import HowIWork from "@/components/portfolio/HowIWork";
-import Education from "@/components/portfolio/Education";
+import PhotosSection from "@/components/portfolio/PhotosSection";
+import WorkSection from "@/components/portfolio/WorkSection";
+import SkillsSection from "@/components/portfolio/SkillsSection";
+import ExperienceSection from "@/components/portfolio/ExperienceSection";
+import CredentialsSection from "@/components/portfolio/CredentialsSection";
 import Contact from "@/components/portfolio/Contact";
-import Notifications from "@/components/portfolio/Notifications";
 import FloatingBackground from "@/components/portfolio/FloatingBackground";
 
 const Portfolio = () => {
-  const [showNotifications, setShowNotifications] = useState(false);
-
-  useEffect(() => {
-    // Start notifications after a brief delay
-    const timer = setTimeout(() => {
-      setShowNotifications(true);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
       <FloatingBackground />
+      <Navbar />
       <div className="relative z-10">
         <HeroSection />
-        <Testimonials />
         <AboutSection />
-        <TechnicalArsenal />
-        <WorkExperience />
-        <CaseStudies />
-        <WorkSamples />
-        <HowIWork />
-        <Education />
+        <PhotosSection />
+        <WorkSection />
+        <SkillsSection />
+        <ExperienceSection />
+        <CredentialsSection />
         <Contact />
       </div>
-      {showNotifications && <Notifications />}
     </div>
   );
 };

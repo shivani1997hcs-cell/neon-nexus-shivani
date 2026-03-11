@@ -1,98 +1,106 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { MapPin, Briefcase } from "lucide-react";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ 
-        x: (e.clientX - window.innerWidth / 2) * 0.01,
-        y: (e.clientY - window.innerHeight / 2) * 0.01
+      setMousePosition({
+        x: (e.clientX - window.innerWidth / 2) * 0.005,
+        y: (e.clientY - window.innerHeight / 2) * 0.005,
       });
     };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/assets/Shivani_Saluja_Resume.pdf';
-    link.download = 'Shivani_Saluja_Resume.pdf';
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const handleContactMe = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-6 py-20 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-card opacity-50"></div>
-      
-      {/* Floating particles effect */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 w-2 h-2 bg-neon-cyan rounded-full animate-float opacity-60"></div>
-        <div className="absolute top-40 right-32 w-1 h-1 bg-neon-magenta rounded-full animate-float opacity-40" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-40 left-40 w-3 h-3 bg-neon-purple rounded-full animate-float opacity-30" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 right-20 w-1.5 h-1.5 bg-neon-blue rounded-full animate-float opacity-50" style={{ animationDelay: '0.5s' }}></div>
-      </div>
+    <section
+      id="hero"
+      className="min-h-screen flex flex-col justify-center items-center px-6 pt-24 pb-20 relative overflow-hidden"
+    >
+      {/* Subtle green glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 40% at 50% 50%, hsl(var(--neon-cyan) / 0.08) 0%, transparent 70%)",
+        }}
+      />
 
-      <div 
-        className="relative z-10 text-center max-w-4xl mx-auto"
-        style={{ 
-          transform: `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0)` 
+      <div
+        className="relative z-10 text-center max-w-5xl mx-auto"
+        style={{
+          transform: `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0)`,
         }}
       >
-        {/* Available for Hire badge */}
-        <div className="inline-flex items-center px-4 py-2 rounded-full border border-neon-cyan bg-neon-cyan/10 mb-8 glow-cyan">
-          <div className="w-2 h-2 bg-neon-cyan rounded-full mr-2 animate-pulse"></div>
-          <span className="text-neon-cyan font-medium text-sm">Available for Hire</span>
+        {/* Tag */}
+        <div className="inline-flex items-center px-4 py-2 rounded-full border border-border bg-card/50 mb-8">
+          <div className="w-2 h-2 bg-neon-cyan rounded-full mr-2 animate-pulse" />
+          <span className="text-sm text-muted-foreground">
+            Senior Product Marketing Manager · <span className="text-neon-cyan">Available for Hire</span>
+          </span>
         </div>
 
         {/* Name */}
-        <h1 className="font-bold mb-4 text-gradient-animated animate-glow" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)' }}>
+        <h1
+          className="font-bold mb-6 text-foreground tracking-tight"
+          style={{ fontSize: "clamp(3.5rem, 10vw, 8rem)", lineHeight: 0.95 }}
+        >
           Shivani Saluja
         </h1>
-        
-        {/* Title */}
-        <h2 className="text-2xl md:text-3xl font-semibold text-neon-cyan mb-6">
-          B2B Product Marketer
-        </h2>
 
-        {/* Subheading */}
-        <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed mb-6 max-w-3xl mx-auto">
-          I help technical teams turn complex products into clear narratives, campaigns, and sales motions that drive revenue.
+        {/* Subhead */}
+        <p className="text-xl md:text-2xl text-muted-foreground mb-2 uppercase tracking-widest font-light">
+          I turn complex B2B products into
+        </p>
+        <p
+          className="font-serif italic text-neon-cyan mb-10"
+          style={{ fontSize: "clamp(1.5rem, 4vw, 3rem)" }}
+        >
+          stories that close deals.
         </p>
 
-        {/* Credibility line */}
-        <p className="text-base md:text-lg text-muted-foreground/80 mb-12 max-w-2xl mx-auto">
-          Experience across warehouse automation, B2B SaaS, and media, working with enterprise buyers in the US, Europe, and APAC.
-        </p>
+        {/* Location & role */}
+        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground mb-10">
+          <span className="flex items-center gap-1.5">
+            <MapPin className="w-4 h-4 text-neon-cyan" />
+            Based in <span className="text-foreground font-medium">London</span>
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Briefcase className="w-4 h-4 text-neon-cyan" />
+            AI, Enterprise SaaS & <span className="text-foreground font-medium">Warehouse Automation</span>
+          </span>
+        </div>
 
-        {/* CTA buttons */}
+        {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
-            onClick={handleDownloadResume}
-            variant="neon"
-            size="lg"
-            className="px-8 py-3 text-lg font-semibold hover:scale-105 hover:shadow-neon-cyan hover:-translate-y-1 transition-all duration-300"
+          <Button
+            onClick={() =>
+              document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="bg-foreground text-background hover:bg-foreground/90 px-8 py-3 text-base font-semibold rounded-full"
           >
-            Download Resume
+            View My Work
           </Button>
-          <Button 
+          <Button
             variant="outline"
-            onClick={handleContactMe}
-            size="lg"
-            className="px-8 py-3 text-lg font-semibold border-neon-magenta text-neon-magenta hover:bg-neon-magenta hover:text-background hover:scale-105 hover:-translate-y-1 transition-all duration-300"
+            onClick={() =>
+              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="border-border text-foreground hover:bg-muted px-8 py-3 text-base font-semibold rounded-full"
           >
             Let's Chat
           </Button>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
+          <div className="w-1 h-2 bg-muted-foreground/50 rounded-full animate-bounce" />
         </div>
       </div>
     </section>
