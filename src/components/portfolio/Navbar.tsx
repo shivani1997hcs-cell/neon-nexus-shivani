@@ -13,7 +13,7 @@ const links = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(true);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
