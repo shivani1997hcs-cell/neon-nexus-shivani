@@ -19,7 +19,7 @@ const Portfolio = () => {
         <IntelligenceStack />
         <CaseStudies />
         <HowIWork />
-        <Writing />
+        
         <Background />
         <Contact />
       </main>
