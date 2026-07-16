@@ -18,7 +18,7 @@ const cases = [
     client: "GreyOrange · Two autonomous forklift launches",
     problem: "Two hardware launches, one shared narrative to hold, forty reps to enable, no room to slip.",
     found: "Sales, Product and RevOps were reading three different briefs. Positioning was drifting inside the company before it hit any customer.",
-    did: "Wrote the shared narrative before any asset. Ruthlessly prioritised launch week — everything nice-to-have got pushed. Built a post-launch feedback loop with Sales and RevOps so field signal turned into decisions, not decks.",
+    did: "Wrote the shared narrative before any asset. Ruthlessly prioritised launch week , everything nice-to-have got pushed. Built a post-launch feedback loop with Sales and RevOps so field signal turned into decisions, not decks.",
     result: [
       { k: "+45%", v: "Pipeline" },
       { k: "$20M+", v: "Influenced pipeline" },
