@@ -3,15 +3,15 @@ import { useReveal } from "@/hooks/useReveal";
 const roles = [
   { period: "Now", company: "Mention Me", role: "AI product & growth marketing", location: "London" },
   { period: "2025", company: "Freelance", role: "Product marketing consulting", location: "London" },
-  { period: "2025", company: "HeyAlpha", role: "MBA internship , AI for guest experience", location: "London" },
-  { period: "2022 , 2024", company: "GreyOrange", role: "PMM · Warehouse robotics", location: "US & India" },
-  { period: "2021 , 2022", company: "Graphy", role: "Product marketing", location: "India" },
-  { period: "2019 , 2021", company: "Times Internet", role: "Growth Associate", location: "India" },
+  { period: "2025", company: "HeyAlpha", role: "MBA internship, AI for guest experience", location: "London" },
+  { period: "2022–2024", company: "GreyOrange", role: "PMM · Warehouse robotics", location: "US & India" },
+  { period: "2021–2022", company: "Graphy", role: "Product marketing", location: "India" },
+  { period: "2019–2021", company: "Times Internet", role: "Growth Associate", location: "India" },
 ];
 
 const education = [
-  { period: "2024 , 2025", school: "Imperial College London", degree: "MBA" },
-  { period: "2015 , 2018", school: "University of Delhi", degree: "BSc Chemistry" },
+  { period: "2024–2025", school: "Imperial College London", degree: "MBA" },
+  { period: "2015–2018", school: "University of Delhi", degree: "BSc Chemistry" },
 ];
 
 const Background = () => {
