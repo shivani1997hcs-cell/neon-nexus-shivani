@@ -1,58 +1,67 @@
-import { Button } from "@/components/ui/button";
+import { useReveal } from "@/hooks/useReveal";
 import { Mail, Linkedin, Download } from "lucide-react";
 
 const Contact = () => {
-  return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <p className="text-sm uppercase tracking-widest text-neon-cyan mb-4">Let's Connect</p>
+  const reveal = useReveal<HTMLDivElement>();
 
-        <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-          One day or<br />day one?
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/assets/Shivani_Saluja_Resume.pdf";
+    link.download = "Shivani_Saluja_Resume.pdf";
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <section id="contact" className="px-6 py-24 border-t border-border">
+      <div ref={reveal} className="max-w-6xl mx-auto">
+        <div className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Contact</div>
+        <h2 className="font-display font-semibold tracking-tight text-foreground leading-[1.02]"
+            style={{ fontSize: "clamp(2.5rem, 6.5vw, 5rem)" }}>
+          Let's talk.
         </h2>
 
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-12">
-          I'm always open to conversations about PMM roles, GTM challenges, or just a good debate about whether positioning or enablement moves pipeline faster.
+        <p className="mt-6 text-muted-foreground text-lg max-w-2xl">
+          Best way to reach me is email. I actually reply.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            onClick={() => window.open("mailto:shivani.saluja24@imperial.ac.uk", "_blank")}
-            className="bg-foreground text-background hover:bg-foreground/90 px-8 py-3 text-base font-semibold rounded-full"
+        <div className="mt-12 grid sm:grid-cols-3 gap-4 max-w-3xl">
+          <a
+            href="mailto:shivani.saluja24@imperial.ac.uk"
+            className="stack-card group border border-border rounded-lg p-5 bg-surface flex items-center gap-3"
           >
-            <Mail className="w-4 h-4 mr-2" />
-            Send an Email
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() => window.open("https://www.linkedin.com/in/shivani-saluja-/", "_blank")}
-            className="border-border text-foreground hover:bg-muted px-8 py-3 text-base font-semibold rounded-full"
-          >
-            <Linkedin className="w-4 h-4 mr-2" />
-            View LinkedIn
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() => {
-              const link = document.createElement("a");
-              link.href = "/assets/Shivani_Saluja_Resume.pdf";
-              link.download = "Shivani_Saluja_Resume.pdf";
-              link.target = "_blank";
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
-            className="border-border text-foreground hover:bg-muted px-8 py-3 text-base font-semibold rounded-full"
-          >
-            <Download className="w-4 h-4 mr-2" />
-            Download CV
-          </Button>
-        </div>
+            <Mail className="w-4 h-4 text-accent shrink-0" />
+            <div className="min-w-0">
+              <div className="text-xs text-muted-foreground">Email</div>
+              <div className="text-sm text-foreground truncate">shivani.saluja24@imperial.ac.uk</div>
+            </div>
+          </a>
 
-        <div className="mt-16 pt-8 border-t border-border">
-          <p className="text-sm text-muted-foreground">
-            Based in London · Open to global opportunities · Available immediately
-          </p>
+          <a
+            href="https://www.linkedin.com/in/shivani-saluja-/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="stack-card group border border-border rounded-lg p-5 bg-surface flex items-center gap-3"
+          >
+            <Linkedin className="w-4 h-4 text-accent shrink-0" />
+            <div>
+              <div className="text-xs text-muted-foreground">LinkedIn</div>
+              <div className="text-sm text-foreground">/in/shivani-saluja-</div>
+            </div>
+          </a>
+
+          <button
+            onClick={handleDownloadCV}
+            className="stack-card group border border-border rounded-lg p-5 bg-surface flex items-center gap-3 text-left"
+          >
+            <Download className="w-4 h-4 text-accent shrink-0" />
+            <div>
+              <div className="text-xs text-muted-foreground">Resume</div>
+              <div className="text-sm text-foreground">Download PDF</div>
+            </div>
+          </button>
         </div>
       </div>
     </section>
