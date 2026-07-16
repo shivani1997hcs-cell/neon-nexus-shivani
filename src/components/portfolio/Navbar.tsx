@@ -5,7 +5,7 @@ const links = [
   { label: "System", href: "#system" },
   { label: "Case studies", href: "#case-studies" },
   { label: "How I work", href: "#how-i-work" },
-  { label: "Writing", href: "#writing" },
+  
   { label: "Background", href: "#background" },
   { label: "Contact", href: "#contact" },
 ];
@@ -13,7 +13,7 @@ const links = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(true);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);

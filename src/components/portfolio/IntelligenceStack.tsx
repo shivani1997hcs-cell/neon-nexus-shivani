@@ -190,7 +190,7 @@ const IntelligenceStack = () => {
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">{s.what}</p>
               <p className="text-sm text-foreground/90 leading-relaxed border-t border-border pt-3">
-                <span className="text-muted-foreground/70">Outcome — </span>
+                <span className="text-muted-foreground/70">Outcome , </span>
                 {s.outcome}
               </p>
             </div>

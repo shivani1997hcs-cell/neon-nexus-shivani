@@ -25,9 +25,9 @@ const HeroSection = () => {
             <img
               src={portrait}
               alt="Shivani Saluja"
-              width={80}
-              height={80}
-              className="w-20 h-20 rounded-full object-cover object-top ring-1 ring-border-strong"
+              width={176}
+              height={176}
+              className="w-40 h-40 md:w-44 md:h-44 rounded-full object-cover object-top ring-1 ring-border-strong shadow-lg"
             />
           </div>
 
@@ -39,7 +39,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
-            Product marketer across robotics, AI and B2B SaaS. I turn complex products into commercial narratives — and I build AI agents that do the heavy lifting.
+            Product marketer across robotics, AI and B2B SaaS. I turn complex products into commercial narratives, and I build AI agents that do the heavy lifting.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
