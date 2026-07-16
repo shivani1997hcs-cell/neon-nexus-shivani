@@ -1,4 +1,5 @@
 import TerminalAnimation from "./TerminalAnimation";
+import portrait from "@/assets/shivani-portrait.jpeg";
 
 const HeroSection = () => {
   const handleDownloadCV = () => {
@@ -20,9 +21,14 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto w-full grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center">
         {/* Left: copy */}
         <div>
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-border-strong bg-surface text-xs text-muted-foreground mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            Available for senior PMM roles
+          <div className="mb-8">
+            <img
+              src={portrait}
+              alt="Shivani Saluja"
+              width={80}
+              height={80}
+              className="w-20 h-20 rounded-full object-cover object-top ring-1 ring-border-strong"
+            />
           </div>
 
           <h1 className="font-display font-semibold tracking-tight text-foreground leading-[0.98]"

@@ -6,7 +6,7 @@ const roles = [
   { period: "2025", company: "HeyAlpha", role: "MBA internship — AI for guest experience", location: "London" },
   { period: "2022 — 2024", company: "GreyOrange", role: "PMM · Warehouse robotics", location: "US & India" },
   { period: "2021 — 2022", company: "Graphy", role: "Product marketing", location: "India" },
-  { period: "2019 — 2021", company: "Times Internet", role: "Brand strategist", location: "India" },
+  { period: "2019 — 2021", company: "Times Internet", role: "Growth Associate", location: "India" },
 ];
 
 const education = [
@@ -28,7 +28,7 @@ const Background = () => {
             Six roles across three continents.
           </h2>
           <p className="mt-6 text-muted-foreground max-w-2xl">
-            Worked across India, US, UK and the Middle East. MBA at Imperial. Not looking for a CV dump? Below is the compact version.
+            The compact version:
           </p>
         </div>
 

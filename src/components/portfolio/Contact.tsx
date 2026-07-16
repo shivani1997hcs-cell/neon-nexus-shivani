@@ -29,13 +29,13 @@ const Contact = () => {
 
         <div className="mt-12 grid sm:grid-cols-3 gap-4 max-w-3xl">
           <a
-            href="mailto:shivani.saluja24@imperial.ac.uk"
+            href="mailto:shivani1997hcs@gmail.com"
             className="stack-card group border border-border rounded-lg p-5 bg-surface flex items-center gap-3"
           >
             <Mail className="w-4 h-4 text-accent shrink-0" />
             <div className="min-w-0">
               <div className="text-xs text-muted-foreground">Email</div>
-              <div className="text-sm text-foreground truncate">shivani.saluja24@imperial.ac.uk</div>
+              <div className="text-sm text-foreground truncate">shivani1997hcs@gmail.com</div>
             </div>
           </a>
 
