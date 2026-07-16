@@ -4,7 +4,7 @@ import HighlightsBar from "@/components/portfolio/HighlightsBar";
 import IntelligenceStack from "@/components/portfolio/IntelligenceStack";
 import CaseStudies from "@/components/portfolio/CaseStudies";
 import HowIWork from "@/components/portfolio/HowIWork";
-import Writing from "@/components/portfolio/Writing";
+
 import Background from "@/components/portfolio/Background";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
