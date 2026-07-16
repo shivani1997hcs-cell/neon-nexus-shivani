@@ -25,9 +25,9 @@ const HeroSection = () => {
             <img
               src={portrait}
               alt="Shivani Saluja"
-              width={176}
-              height={176}
-              className="w-40 h-40 md:w-44 md:h-44 rounded-full object-cover object-top ring-1 ring-border-strong shadow-lg"
+              width={240}
+              height={240}
+              className="w-52 h-52 md:w-60 md:h-60 rounded-full object-cover object-top ring-1 ring-border-strong shadow-lg"
             />
           </div>
 
