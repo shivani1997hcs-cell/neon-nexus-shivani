@@ -36,7 +36,7 @@ const StatCard = ({ end, prefix, suffix, label, detail }: (typeof stats)[number]
   const { ref, display } = useCountUp({ end, prefix, suffix });
   return (
     <div className="stack-card group border border-border rounded-lg p-6 bg-surface">
-      <div ref={ref} className="font-display text-4xl md:text-5xl font-semibold tracking-tight text-accent tabular-nums">
+      <div className="font-display text-4xl md:text-5xl font-semibold tracking-tight text-accent tabular-nums"><span ref={ref} className="contents">
         <span>{display}</span>
       </div>
       <div className="mt-3 text-sm font-medium text-foreground">{label}</div>
