@@ -1,80 +1,100 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Sun, Moon } from "lucide-react";
 
-const navLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
-  { label: "Skills", href: "#skills" },
+const links = [
+  { label: "System", href: "#system" },
+  { label: "Case studies", href: "#case-studies" },
+  { label: "How I work", href: "#how-i-work" },
+  { label: "Background", href: "#background" },
   { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [isLight, setIsLight] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClick = (href: string) => {
-    setMobileOpen(false);
+  const toggleTheme = () => {
+    const next = !isLight;
+    setIsLight(next);
+    document.documentElement.classList.toggle("light", next);
+  };
+
+  const go = (href: string) => {
+    setOpen(false);
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border"
-          : "bg-transparent"
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-200 ${
+        scrolled ? "bg-background/85 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <span className="text-lg font-bold text-neon-cyan tracking-tight">SS</span>
-          <div className="hidden sm:block text-xs text-muted-foreground leading-tight">
-            <div>Senior PMM</div>
-            <div className="text-neon-cyan">Available for Hire</div>
-          </div>
-        </div>
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <button
+          onClick={() => go("#hero")}
+          className="flex items-center gap-2.5 group"
+          aria-label="Home"
+        >
+          <span className="w-2 h-2 rounded-full bg-accent group-hover:scale-125 transition-transform" />
+          <span className="font-display font-semibold tracking-tight text-foreground">Shivani Saluja</span>
+        </button>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1 bg-card/50 backdrop-blur-sm rounded-full border border-border px-2 py-1">
-          {navLinks.map((link) => (
+        <div className="hidden md:flex items-center gap-1">
+          {links.map((l) => (
             <button
-              key={link.label}
-              onClick={() => handleClick(link.href)}
-              className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-muted/50"
+              key={l.label}
+              onClick={() => go(l.href)}
+              className="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md"
             >
-              {link.label}
+              {l.label}
             </button>
           ))}
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="ml-2 p-2 text-muted-foreground hover:text-foreground rounded-md border border-border hover:border-border-strong transition-colors"
+          >
+            {isLight ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+          </button>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
-        >
-          <span className={`block w-5 h-0.5 bg-foreground transition-transform ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-5 h-0.5 bg-foreground transition-opacity ${mobileOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-5 h-0.5 bg-foreground transition-transform ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="p-2 text-muted-foreground hover:text-foreground rounded-md border border-border"
+          >
+            {isLight ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+          </button>
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label="Menu"
+            className="p-2 flex flex-col gap-1"
+          >
+            <span className={`block w-5 h-px bg-foreground transition-transform ${open ? "rotate-45 translate-y-[5px]" : ""}`} />
+            <span className={`block w-5 h-px bg-foreground transition-opacity ${open ? "opacity-0" : ""}`} />
+            <span className={`block w-5 h-px bg-foreground transition-transform ${open ? "-rotate-45 -translate-y-[5px]" : ""}`} />
+          </button>
+        </div>
       </div>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border px-6 pb-6 space-y-2">
-          {navLinks.map((link) => (
+      {open && (
+        <div className="md:hidden bg-background border-b border-border px-6 pb-4">
+          {links.map((l) => (
             <button
-              key={link.label}
-              onClick={() => handleClick(link.href)}
-              className="block w-full text-left px-4 py-3 text-muted-foreground hover:text-foreground transition-colors"
+              key={l.label}
+              onClick={() => go(l.href)}
+              className="block w-full text-left py-3 text-muted-foreground hover:text-foreground border-b border-border/50 last:border-0"
             >
-              {link.label}
+              {l.label}
             </button>
           ))}
         </div>

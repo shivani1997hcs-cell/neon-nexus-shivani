@@ -1,29 +1,27 @@
 import Navbar from "@/components/portfolio/Navbar";
 import HeroSection from "@/components/portfolio/HeroSection";
-import AboutSection from "@/components/portfolio/AboutSection";
-import PhotosSection from "@/components/portfolio/PhotosSection";
-import WorkSection from "@/components/portfolio/WorkSection";
-import SkillsSection from "@/components/portfolio/SkillsSection";
-import ExperienceSection from "@/components/portfolio/ExperienceSection";
-import CredentialsSection from "@/components/portfolio/CredentialsSection";
+import HighlightsBar from "@/components/portfolio/HighlightsBar";
+import IntelligenceStack from "@/components/portfolio/IntelligenceStack";
+import CaseStudies from "@/components/portfolio/CaseStudies";
+import HowIWork from "@/components/portfolio/HowIWork";
+import Background from "@/components/portfolio/Background";
 import Contact from "@/components/portfolio/Contact";
-import FloatingBackground from "@/components/portfolio/FloatingBackground";
+import Footer from "@/components/portfolio/Footer";
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
-      <FloatingBackground />
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
-      <div className="relative z-10">
+      <main>
         <HeroSection />
-        <AboutSection />
-        <PhotosSection />
-        <WorkSection />
-        <SkillsSection />
-        <ExperienceSection />
-        <CredentialsSection />
+        <HighlightsBar />
+        <IntelligenceStack />
+        <CaseStudies />
+        <HowIWork />
+        <Background />
         <Contact />
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 };

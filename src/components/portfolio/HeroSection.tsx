@@ -1,106 +1,67 @@
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { MapPin, Briefcase } from "lucide-react";
+import TerminalAnimation from "./TerminalAnimation";
 
 const HeroSection = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/assets/Shivani_Saluja_Resume.pdf";
+    link.download = "Shivani_Saluja_Resume.pdf";
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX - window.innerWidth / 2) * 0.005,
-        y: (e.clientY - window.innerHeight / 2) * 0.005,
-      });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  const goToSystem = () => document.getElementById("system")?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section
-      id="hero"
-      className="min-h-screen flex flex-col justify-center items-center px-6 pt-24 pb-20 relative overflow-hidden"
-    >
-      {/* Subtle green glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 40% at 50% 50%, hsl(var(--neon-cyan) / 0.08) 0%, transparent 70%)",
-        }}
-      />
+    <section id="hero" className="relative min-h-[92vh] flex items-center pt-28 pb-16 px-6 overflow-hidden">
+      <div className="absolute inset-0 bg-grid pointer-events-none" aria-hidden />
 
-      <div
-        className="relative z-10 text-center max-w-5xl mx-auto"
-        style={{
-          transform: `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0)`,
-        }}
-      >
-        {/* Tag */}
-        <div className="inline-flex items-center px-4 py-2 rounded-full border border-border bg-card/50 mb-8">
-          <div className="w-2 h-2 bg-neon-cyan rounded-full mr-2 animate-pulse" />
-          <span className="text-sm text-muted-foreground">
-            Senior Product Marketing Manager · <span className="text-neon-cyan">Available for Hire</span>
-          </span>
+      <div className="relative z-10 max-w-6xl mx-auto w-full grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center">
+        {/* Left: copy */}
+        <div>
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-border-strong bg-surface text-xs text-muted-foreground mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            Available for senior PMM roles
+          </div>
+
+          <h1 className="font-display font-semibold tracking-tight text-foreground leading-[0.98]"
+              style={{ fontSize: "clamp(2.5rem, 6.2vw, 5rem)" }}>
+            I build the<br />
+            <span className="text-accent">intelligence layer</span><br />
+            for product marketing.
+          </h1>
+
+          <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
+            Product marketer across robotics, AI and B2B SaaS. I turn complex products into commercial narratives — and I build AI agents that do the heavy lifting.
+          </p>
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            <button
+              onClick={goToSystem}
+              className="group px-5 py-3 rounded-md bg-accent text-accent-foreground font-medium text-sm hover:bg-accent-glow transition-colors flex items-center gap-2"
+            >
+              See the system
+              <span className="transition-transform group-hover:translate-x-0.5">→</span>
+            </button>
+            <button
+              onClick={handleDownloadCV}
+              className="px-5 py-3 rounded-md border border-border-strong text-foreground font-medium text-sm hover:border-accent hover:text-accent transition-colors"
+            >
+              Download CV
+            </button>
+          </div>
+
+          <p className="mt-6 text-sm text-muted-foreground">
+            London <span className="text-border-strong mx-2">·</span>
+            Currently at Mention Me <span className="text-border-strong mx-2">·</span>
+            MBA, Imperial College London
+          </p>
         </div>
 
-        {/* Name */}
-        <h1
-          className="font-bold mb-6 text-foreground tracking-tight"
-          style={{ fontSize: "clamp(3.5rem, 10vw, 8rem)", lineHeight: 0.95 }}
-        >
-          Shivani Saluja
-        </h1>
-
-        {/* Subhead */}
-        <p className="text-xl md:text-2xl text-muted-foreground mb-2 uppercase tracking-widest font-light">
-          I turn complex B2B products into
-        </p>
-        <p
-          className="font-serif italic text-neon-cyan mb-10"
-          style={{ fontSize: "clamp(1.5rem, 4vw, 3rem)" }}
-        >
-          stories that close deals.
-        </p>
-
-        {/* Location & role */}
-        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground mb-10">
-          <span className="flex items-center gap-1.5">
-            <MapPin className="w-4 h-4 text-neon-cyan" />
-            Based in <span className="text-foreground font-medium">London</span>
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Briefcase className="w-4 h-4 text-neon-cyan" />
-            AI, Enterprise SaaS & <span className="text-foreground font-medium">Warehouse Automation</span>
-          </span>
-        </div>
-
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            onClick={() =>
-              document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="bg-foreground text-background hover:bg-foreground/90 px-8 py-3 text-base font-semibold rounded-full"
-          >
-            View My Work
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() =>
-              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="border-border text-foreground hover:bg-muted px-8 py-3 text-base font-semibold rounded-full"
-          >
-            Let's Chat
-          </Button>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
-          <div className="w-1 h-2 bg-muted-foreground/50 rounded-full animate-bounce" />
+        {/* Right: terminal */}
+        <div className="w-full">
+          <TerminalAnimation />
         </div>
       </div>
     </section>
