@@ -29,17 +29,23 @@ const cases = [
     title: "Listening at a scale humans can't.",
     client: "Repositioning · AI-driven call analysis",
     problem: "Messaging didn't match what buyers actually said. Reps knew it. Marketing didn't have proof.",
-    found: "Fed sales calls into an analysis agent to surface the exact language buyers used to describe the problem — and to describe the alternative to buying.",
+    found: "Fed sales calls into an analysis agent to surface the exact language buyers used to describe the problem, and to describe the alternative to buying.",
     did: "Rewrote the angle around the buyers' own words. Tested it in the sales pitch first. Once it proved out in live calls, rolled it to the website and paid campaigns.",
-    result: [
-      { k: "Live", v: "Rolled to web + ads" },
-      { k: "Sales", v: "Adopted first" },
-      { k: "AI", v: "Analysis at scale" },
-    ],
+    note: "Tested in live sales calls before it touched the website. The numbers travel by email.",
   },
 ];
 
-const Case = ({ c, i }: { c: (typeof cases)[number]; i: number }) => {
+type CaseItem = {
+  title: string;
+  client: string;
+  problem: string;
+  found: string;
+  did: string;
+  result?: { k: string; v: string }[];
+  note?: string;
+};
+
+const Case = ({ c, i }: { c: CaseItem; i: number }) => {
   const reveal = useReveal<HTMLDivElement>();
   return (
     <div ref={reveal} className="border-t border-border py-14 first:border-t-0 first:pt-0">
@@ -69,14 +75,21 @@ const Case = ({ c, i }: { c: (typeof cases)[number]; i: number }) => {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
-            {c.result.map((r) => (
-              <div key={r.k}>
-                <div className="font-display text-3xl md:text-4xl font-semibold text-accent tabular-nums tracking-tight">{r.k}</div>
-                <div className="text-xs text-muted-foreground mt-1">{r.v}</div>
-              </div>
-            ))}
-          </div>
+          {c.result && (
+            <div className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
+              {c.result.map((r) => (
+                <div key={r.k}>
+                  <div className="font-display text-3xl md:text-4xl font-semibold text-accent tabular-nums tracking-tight">{r.k}</div>
+                  <div className="text-xs text-muted-foreground mt-1">{r.v}</div>
+                </div>
+              ))}
+            </div>
+          )}
+          {c.note && (
+            <p className="mt-8 italic text-muted-foreground max-w-2xl leading-relaxed">
+              {c.note}
+            </p>
+          )}
         </div>
       </div>
     </div>
